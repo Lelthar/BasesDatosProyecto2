@@ -1,0 +1,6 @@
+'CONCACAF'
+'UEFA'
+'CONMEBOL'
+'CAF'
+'AFC'
+'OFC'
