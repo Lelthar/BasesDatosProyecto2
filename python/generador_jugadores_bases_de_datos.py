@@ -45,7 +45,7 @@ def crear_insercion_jugadores(cantidad, codigo_equipo, pasaporte):
         else:
             puesto = lista_puestos[r.randrange(len(lista_puestos))]
         
-        consulta = "INSERT INTO jugador VALUES("+ "1"+agregarCeros(str(i+pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', '"+str(r.randrange(1983,1998))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"',"+ str(i+1)+", '"+puesto+"','"+str(codigo_equipo)+"');"
+        consulta = "INSERT INTO jugador VALUES("+ "1"+agregarCeros(str(i+pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', TO_DATE('"+str(r.randrange(1983,1998))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"', 'YYYY-MM-DD'),"+ str(i+1)+", '"+puesto+"','"+str(codigo_equipo)+"');"
         jugadores_file.write(consulta+"\n")
         print(consulta)
         
@@ -67,7 +67,7 @@ def crear_insercion_entrenadores(codigo_equipo, pasaporte):
     largoApellidos = len(lista_apellidos1)
     largoPaises = len(lista_paises)
 
-    consulta = "INSERT INTO entrenador VALUES("+ "2"+agregarCeros(str(pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', '"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+", '"+lista_paises[r.randrange(largoPaises)]+"','"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','"+str(codigo_equipo)+"');"
+    consulta = "INSERT INTO entrenador VALUES("+ "2"+agregarCeros(str(pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', TO_DATE('"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"', 'YYYY-MM-DD'),'"+lista_paises[r.randrange(largoPaises)]+"', TO_DATE('"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD'),'"+str(codigo_equipo)+"');"
     entrenadores_file.write(consulta+"\n")
     print(consulta)
         
@@ -109,7 +109,7 @@ def crear_insercion_asistentes(numero_entrenador, pasaporte):
             puesto = lista_puestos[6]
         
         
-        consulta = "INSERT INTO asistente VALUES("+ "3"+agregarCeros(str(i+pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', '"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"', '"+lista_paises[r.randrange(largoPaises)]+"', '"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"' , '"+puesto+"', "+str(numero_entrenador)+");"
+        consulta = "INSERT INTO asistente VALUES("+ "3"+agregarCeros(str(i+pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', TO_DATE('"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD'), '"+lista_paises[r.randrange(largoPaises)]+"', TO_DATE('"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD') , '"+puesto+"', "+str(numero_entrenador)+");"
         asistentes_file.write(consulta+"\n")
         print(consulta)
         
@@ -148,7 +148,7 @@ def crear_insercion_federativos(numero_equipo, pasaporte):
             puesto = lista_puestos[5]
         
         
-        consulta = "INSERT INTO federativo VALUES("+ "4"+agregarCeros(str(i+pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', '"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"', '"+lista_paises[r.randrange(largoPaises)]+"', '"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"' , '"+puesto+"', "+str(numero_equipo)+");"
+        consulta = "INSERT INTO federativo VALUES("+ "4"+agregarCeros(str(i+pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', TO_DATE('"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD'), '"+lista_paises[r.randrange(largoPaises)]+"', TO_DATE('"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD') , '"+puesto+"', "+str(numero_equipo)+");"
         federativo_file.write(consulta+"\n")
         print(consulta)
         
@@ -215,7 +215,7 @@ def generar_equipos(numero):
 
     equipos_file.close()
 
-generar_equipos(32)
+#generar_equipos(32)
 
 def crear_insercion_arbitros(cantidad):
     arbitros_file = open("insercion_arbitros.txt",'a')
@@ -232,10 +232,9 @@ def crear_insercion_arbitros(cantidad):
 
     for i in range(cantidad):
     
-        consulta = "INSERT INTO asistente VALUES("+ "5"+agregarCeros(str(i))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', '"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"', '"+lista_paises[r.randrange(largoPaises)]+"', '"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"');"
+        consulta = "INSERT INTO arbitro VALUES("+ "5"+agregarCeros(str(i))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', TO_DATE('"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"', 'YYYY-MM-DD'), '"+lista_paises[r.randrange(largoPaises)]+"', TO_DATE('"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD'));"
         arbitros_file.write(consulta+"\n")
         print(consulta)
         
     arbitros_file.close()
-
-#crear_insercion_arbitros(20)
+crear_insercion_arbitros(20)
