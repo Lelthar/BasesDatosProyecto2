@@ -1,0 +1,13 @@
+Sedes, estadio y capacidad: 
+Moscú: Estadio Luzhniki (81300), Otkrytie Arena (46990)
+San Petersburgo: Estadio de San Petersburgo (69500)
+Kaliningrado: Estadio de Kaliningrado (35000)
+Kazán: Kazán Arena (45105)
+Nizhni Nóvgorod: Estadio de Nizhni Nóvgorod (44899)
+Volgogrado: Volgogrado Arena (45015)
+Samara: Samara Arena (44918)
+Saransk: Mordovia Arena (45015)
+Rostov del Don: Rostov Arena (43702)
+Sochi: Estadio Fisht (47659)
+Ekaterimburgo: Ekaterimburgo Arena (35000)
+

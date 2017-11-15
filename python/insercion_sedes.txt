@@ -1,0 +1,12 @@
+INSERT INTO sede VALUES('Moscú','Estadio Luzhniki',81300);
+INSERT INTO sede VALUES('Moscú','Otkrytie Arena',46990);
+INSERT INTO sede VALUES('San Petersburgo','Estadio de San Petersburgo',69500);
+INSERT INTO sede VALUES('Kaliningrado','Estadio de Kaliningrado',35000);
+INSERT INTO sede VALUES('Kazán','Kazán Arena',45105);
+INSERT INTO sede VALUES('Nizhni Nóvgorod','Estadio de Nizhni Nóvgorod',44899);
+INSERT INTO sede VALUES('Volgogrado','Volgogrado Arena',45015);
+INSERT INTO sede VALUES('Samara','Samara Arena',44918);
+INSERT INTO sede VALUES('Saransk','Mordovia Arena',45015);
+INSERT INTO sede VALUES('Rostov del Don','Rostov Arena',43702);
+INSERT INTO sede VALUES('Sochi','Estadio Fisht',47659);
+INSERT INTO sede VALUES('Ekaterimburgo','Ekaterimburgo Arena',35000);

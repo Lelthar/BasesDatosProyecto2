@@ -4,8 +4,10 @@ import random as r
 def cargar_lista(nombre_archivo):
     file = open(nombre_archivo,encoding="utf8")
     lista = []
-    while(file.readline()):
-        lista.append(file.readline().strip("\n"))
+    '''while(file.readline()):
+        lista.append(file.readline().strip("\n"))'''
+    for i in file:
+        lista.append(i.strip("\n"))
 
     file.close()
     return lista
@@ -165,6 +167,7 @@ def generar_equipos(numero):
     pasaporte_entrenador = 0
     pasaporte_asistente = 0
     pasaporte_federativos = 0
+    #print(largo_equipos)
 
     #INSERT INTO equipo VALUES('codigo', 'nombre_pais', 'grupo', 'confederacion');
     for i in range(numero):
@@ -212,4 +215,27 @@ def generar_equipos(numero):
 
     equipos_file.close()
 
-generar_equipos(2)
+generar_equipos(32)
+
+def crear_insercion_arbitros(cantidad):
+    arbitros_file = open("insercion_arbitros.txt",'a')
+
+    lista_nombres = cargar_lista("nombres.txt")
+    lista_apellidos1 = cargar_lista("apellidos.txt")
+    lista_apellidos2 = cargar_lista("apellidos.txt")
+    lista_paises = cargar_lista("paises.txt")
+
+    largoNombres = len(lista_nombres)
+    largoApellidos = len(lista_apellidos1)
+    largoPaises = len(lista_paises)
+    
+
+    for i in range(cantidad):
+    
+        consulta = "INSERT INTO asistente VALUES("+ "5"+agregarCeros(str(i))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', '"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"', '"+lista_paises[r.randrange(largoPaises)]+"', '"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"');"
+        arbitros_file.write(consulta+"\n")
+        print(consulta)
+        
+    arbitros_file.close()
+
+#crear_insercion_arbitros(20)
