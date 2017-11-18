@@ -88,7 +88,7 @@ public class AcercaDe extends javax.swing.JFrame {
 
         jLabel7.setText("Marlon Reyes");
 
-        jLabel8.setText("Gerald");
+        jLabel8.setText("Gerald Morales Alvarado");
 
         javax.swing.GroupLayout imagen_jPanelLayout = new javax.swing.GroupLayout(imagen_jPanel);
         imagen_jPanel.setLayout(imagen_jPanelLayout);
@@ -116,7 +116,6 @@ public class AcercaDe extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(aceptar_jButton)
                         .addGap(65, 65, 65))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,10 +125,10 @@ public class AcercaDe extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(37, 37, 37)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel7)
-                                .addComponent(jLabel6)))))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(14, 14, 14))
             .addGroup(layout.createSequentialGroup()
                 .addGap(59, 59, 59)
