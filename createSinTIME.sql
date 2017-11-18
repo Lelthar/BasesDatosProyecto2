@@ -209,13 +209,15 @@ CREATE TABLE pantilla_titular_equipo_local (			/* TITULARES_POR_PARTIDO_EQUIPO_L
 
 CREATE TABLE cambios_equipo_local (						/* CAMBIOS_POR_PARTIDO_EQUIPO_LOCAL */
 	numero_partido INTEGER NOT NULL,
-	numero_pasaporte_jugador INTEGER NOT NULL,
+	numero_pasaporte_jugador_entra INTEGER NOT NULL,
+    numero_pasaporte_jugador_sale INTEGER NOT NULL,
 	codigo_equipo CHAR(3) NOT NULL,
 	minuto_cambio INTEGER NOT NULL,
-	PRIMARY KEY (numero_partido, numero_pasaporte_jugador),
+	PRIMARY KEY (numero_partido, numero_pasaporte_jugador_entra,numero_pasaporte_jugador_sale),
 	FOREIGN KEY (codigo_equipo) REFERENCES equipo,
 	FOREIGN KEY (numero_partido) REFERENCES partido,
-	FOREIGN KEY (numero_pasaporte_jugador) REFERENCES jugador
+	FOREIGN KEY (numero_pasaporte_jugador_entra) REFERENCES jugador,
+    FOREIGN KEY (numero_pasaporte_jugador_sale) REFERENCES jugador
 )
 
 /*____ TABLAS RELACIONADAS A EQUIPO2 O EQUIPO VISITA _____________________________________________________________________________________________*/
