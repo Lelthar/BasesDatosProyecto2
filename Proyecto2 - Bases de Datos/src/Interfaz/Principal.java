@@ -7,14 +7,9 @@ package Interfaz;
 
 import java.awt.Color;
 import java.awt.Desktop;
-import java.awt.Font;
-import java.awt.Graphics;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.ImageIcon;
-import javax.swing.JComponent;
-import javax.swing.UIManager;
-import javax.swing.plaf.basic.BasicMenuBarUI;
 
 /**
  *
@@ -24,6 +19,7 @@ public class Principal extends javax.swing.JFrame {
     
     private Diccionario diccionario;
     private AcercaDe acercaDe;
+    private CRUD crud;
     private final ImageIcon iconoFlecha = new ImageIcon(getClass().getResource("/Complementos/flecha.png"));
     private final ImageIcon iconoMundial = new ImageIcon(getClass().getResource("/Complementos/icono_rusia.png"));
     
@@ -93,6 +89,7 @@ public class Principal extends javax.swing.JFrame {
         ver_estadios_jLabel = new javax.swing.JLabel();
         principal_jMenuBar = new javax.swing.JMenuBar();
         opciones_jMenu = new javax.swing.JMenu();
+        crud_jMenuItem = new javax.swing.JMenuItem();
         diccionario_jMenuItem = new javax.swing.JMenuItem();
         ayuda_jMenuItem = new javax.swing.JMenuItem();
         acerca_de_jMenuItem = new javax.swing.JMenuItem();
@@ -157,6 +154,15 @@ public class Principal extends javax.swing.JFrame {
 
         opciones_jMenu.setForeground(new java.awt.Color(0, 0, 0));
         opciones_jMenu.setText("Opciones");
+
+        crud_jMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Complementos/balon_futbol.png"))); // NOI18N
+        crud_jMenuItem.setText("CRUD");
+        crud_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crud_jMenuItemActionPerformed(evt);
+            }
+        });
+        opciones_jMenu.add(crud_jMenuItem);
 
         diccionario_jMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Complementos/balon_futbol.png"))); // NOI18N
         diccionario_jMenuItem.setText("Diccionario");
@@ -297,6 +303,11 @@ public class Principal extends javax.swing.JFrame {
     private void salir_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salir_jMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_salir_jMenuItemActionPerformed
+
+    private void crud_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crud_jMenuItemActionPerformed
+        crud = new CRUD();
+        crud.setVisible(true);
+    }//GEN-LAST:event_crud_jMenuItemActionPerformed
     
     /**
      * @param args the command line arguments
@@ -330,6 +341,7 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem acerca_de_jMenuItem;
     private javax.swing.JMenuItem ayuda_jMenuItem;
+    private javax.swing.JMenuItem crud_jMenuItem;
     private javax.swing.JMenuItem diccionario_jMenuItem;
     private javax.swing.JLabel imagen_jLabel;
     private javax.swing.JPanel imagen_jPanel;

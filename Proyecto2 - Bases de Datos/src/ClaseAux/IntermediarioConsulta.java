@@ -40,7 +40,7 @@ public class IntermediarioConsulta {
             if (confederacion.equals("")) {
                 Mensaje.entradaVacia();
             } else {
-                ClaseAux.Variables.setConsultaSQL("SELECT * FROM ELEMENTOS");
+                ClaseAux.Variables.setConsultaSQL("select * from equipo where afiliado_confederacion = '" + confederacion + "'");
                 consulta = new Consulta();
                 consulta.setVisible(true);
             }
@@ -62,7 +62,7 @@ public class IntermediarioConsulta {
             if (partido.equals("")) {
                 Mensaje.entradaVacia();
             } else {
-                ClaseAux.Variables.setConsultaSQL("SELECT * FROM ELEMENTOS");
+                //ClaseAux.Variables.setConsultaSQL("");
                 consulta = new Consulta();
                 consulta.setVisible(true);
             }
