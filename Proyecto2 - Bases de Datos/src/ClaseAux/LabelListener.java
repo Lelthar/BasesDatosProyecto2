@@ -5,6 +5,7 @@
  */
 package ClaseAux;
 
+import Interfaz.EquiposConfederacion;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -16,6 +17,8 @@ import javax.swing.JLabel;
  * @author Jeanca
  */
 public class LabelListener {
+    
+    private static EquiposConfederacion equiposConfederacion;
     
     public static void LabelListener(JLabel jLabel, int opcion) {
         JLabel jLabelListener = jLabel;
@@ -32,23 +35,23 @@ public class LabelListener {
                     case 1:
                         IntermediarioConsulta.verParticipantesPorConferencia();
                         break;
-                    case 2:
-                        ClaseAux.Variables.setConsultaSQL("SELECT * FROM prueba");
-                        IntermediarioConsulta.cargarConsulta();
+                    case 2:                        
+                        equiposConfederacion = new EquiposConfederacion();
+                        equiposConfederacion.setVisible(true);
                         break;
                     case 3:
                         IntermediarioConsulta.verEstadisticaPartidos();
                         break;
                     case 4:
-                        ClaseAux.Variables.setConsultaSQL("SELECT * FROM ELEMENTOS");
+                        ClaseAux.Variables.setConsultaSQL("");
                         IntermediarioConsulta.cargarConsulta();
                         break;
                     case 5:
-                        ClaseAux.Variables.setConsultaSQL("SELECT * FROM ELEMENTOS");
+                        ClaseAux.Variables.setConsultaSQL("");
                         IntermediarioConsulta.cargarConsulta();
                         break;
                     case 6:
-                        ClaseAux.Variables.setConsultaSQL("SELECT * FROM ELEMENTOS");
+                        ClaseAux.Variables.setConsultaSQL("");
                         IntermediarioConsulta.cargarConsulta();
                         break;
                     case 7:
