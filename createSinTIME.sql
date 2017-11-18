@@ -119,6 +119,7 @@ CREATE TABLE sede (
     nombre_sede CHAR(40) NOT NULL,
     nombre_estadio CHAR(40) NOT NULL,
     capacidad_estadio INTEGER CHECK (25000 <= capacidad_estadio AND capacidad_estadio <= 150000),
+    link_estadio VARCHAR(200) NOT NULL,
     PRIMARY KEY (nombre_sede, nombre_estadio)
 )
 
