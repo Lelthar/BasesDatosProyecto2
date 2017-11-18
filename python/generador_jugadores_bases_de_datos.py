@@ -148,7 +148,7 @@ def crear_insercion_federativos(numero_equipo, pasaporte):
             puesto = lista_puestos[5]
         
         
-        consulta = "INSERT INTO federativo VALUES("+ "4"+agregarCeros(str(i+pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', TO_DATE('"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD'), '"+lista_paises[r.randrange(largoPaises)]+"', TO_DATE('"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD') , '"+puesto+"', "+str(numero_equipo)+");"
+        consulta = "INSERT INTO federativo VALUES("+ "4"+agregarCeros(str(i+pasaporte))+", '"+lista_nombres[r.randrange(largoNombres)]+"', '"+lista_apellidos1[r.randrange(largoApellidos)]+"', '"+lista_apellidos2[r.randrange(largoApellidos)]+"', TO_DATE('"+str(r.randrange(1963,1983))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD'), '"+lista_paises[r.randrange(largoPaises)]+"', TO_DATE('"+str(r.randrange(2008,2018))+"-"+str(r.randrange(1,13))+"-"+str(r.randrange(1,29))+"','YYYY-MM-DD') , '"+puesto+"', '"+str(numero_equipo)+"');"
         federativo_file.write(consulta+"\n")
         print(consulta)
         
@@ -237,4 +237,9 @@ def crear_insercion_arbitros(cantidad):
         print(consulta)
         
     arbitros_file.close()
-crear_insercion_arbitros(20)
+#crear_insercion_arbitros(20)
+lista_paises_insercion = ["CIV","ITA","UKR","CRC","CND","ALE","MEX","SUD","BRA","HNG","COL","NED","USA","VNZ","PAN","EGP","POR","PAR","ESP","PER","NIG","AUS","SUI","URU","SUE","BEL","NOR","FIN","ARG","IRL","FRA","CHI"]
+numero = 0
+for i in range(32):
+    crear_insercion_federativos(lista_paises_insercion[i],numero)
+    numero+=6
