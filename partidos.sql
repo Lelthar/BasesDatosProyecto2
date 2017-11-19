@@ -46,3 +46,5 @@ INSERT INTO pantilla_titular_equipo_visita VALUES(0,'CIV',10011);
 INSERT INTO cambios_equipo_local VALUES (0,10009,10016,'CIV',75);
 
 INSERT INTO goles_por_partido VALUES (0,10075,'CRC',40);
+INSERT INTO goles_por_partido VALUES (0,10075,'CRC',40);
+INSERT INTO goles_por_partido VALUES (0,10072,'CRC',40);
