@@ -324,3 +324,23 @@ CREATE TABLE penales_por_partido (
 	FOREIGN KEY (numero_partido) REFERENCES partido,
 	FOREIGN KEY (jugador_que_cobra) REFERENCES jugador
 )
+
+--Este procedure sirve para borrar una tabla que le pongan en los parametros
+create or replace procedure borrar (tabla IN varchar2) as
+    table_or_view_not_exist exception;
+    pragma exception_init(table_or_view_not_exist, -942);
+    attempted_ddl_on_in_use_GTT exception;
+    pragma exception_init(attempted_ddl_on_in_use_GTT, -14452);
+begin
+    execute immediate 'TRUNCATE TABLE '||tabla;
+    execute immediate 'DROP TABLE '||tabla;
+
+    exception 
+        when table_or_view_not_exist then
+            dbms_output.put_line('Table t did not exist at time of drop. Continuing....');
+
+        when attempted_ddl_on_in_use_GTT then
+            dbms_output.put_line('Help!!!! Someone is keeping from doing my job!');
+            dbms_output.put_line('Please rescue me');
+            raise;
+end borrar;
