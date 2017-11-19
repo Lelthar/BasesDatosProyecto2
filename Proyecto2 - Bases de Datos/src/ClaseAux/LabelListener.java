@@ -6,6 +6,7 @@
 package ClaseAux;
 
 import Interfaz.EquiposConfederacion;
+import Interfaz.VentanaGoleadoresMundial;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -19,6 +20,7 @@ import javax.swing.JLabel;
 public class LabelListener {
     
     private static EquiposConfederacion equiposConfederacion;
+    private static VentanaGoleadoresMundial goleadoresMundial;
     
     public static void LabelListener(JLabel jLabel, int opcion) {
         JLabel jLabelListener = jLabel;
@@ -51,8 +53,9 @@ public class LabelListener {
                         IntermediarioConsulta.cargarConsulta();
                         break;
                     case 6:
-                        ClaseAux.Variables.setConsultaSQL("");
-                        IntermediarioConsulta.cargarConsulta();
+                       
+                        goleadoresMundial = new VentanaGoleadoresMundial();
+                        goleadoresMundial.setVisible(true);
                         break;
                     case 7:
                         ClaseAux.Variables.setConsultaSQL("select nombre_estadio from sede");
