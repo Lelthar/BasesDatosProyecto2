@@ -7,6 +7,7 @@ package ClaseAux;
 
 import ClaseAux.Mensaje;
 import Interfaz.Consulta;
+import Interfaz.InformacionEquipos;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
@@ -55,7 +56,7 @@ public class IntermediarioConsulta {
     @SuppressWarnings("UnnecessaryReturnStatement")
     public static void verEstadisticaPartidos() {
         JTextField entradaPartido = new JTextField();
-        Object[] mensaje = { "Partido: ", entradaPartido };
+        Object[] mensaje = { "Partido(TODOS): ", entradaPartido };
         int opcion = JOptionPane.showConfirmDialog(null, mensaje, "Llene la siguiente información: ", JOptionPane.OK_CANCEL_OPTION);
         if (opcion == JOptionPane.OK_OPTION) {
             String partido = entradaPartido.getText();
@@ -63,8 +64,8 @@ public class IntermediarioConsulta {
                 Mensaje.entradaVacia();
             } else {
                 //ClaseAux.Variables.setConsultaSQL("");
-                consulta = new Consulta();
-                consulta.setVisible(true);
+                InformacionEquipos informacionEquipos = new InformacionEquipos(partido);
+                informacionEquipos.setVisible(true);
             }
         } else {
             return;
