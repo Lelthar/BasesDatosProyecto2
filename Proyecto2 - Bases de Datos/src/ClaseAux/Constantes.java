@@ -14,5 +14,8 @@ public class Constantes {
     public static final String ORACLE_DRIVER = "oracle.jdbc.OracleDriver";
     public static final String ENTRADA_VACÍA = "ERROR: La entrada está vacía";
     public static final String CONEXION = "Conexión exitosa.";
+    public static final String CREAR_CRUD = "El elemento se ha creado y agregado correctamente.";
+    public static final String BORRAR_CRUD = "El elemento se ha eliminado correctamente.";
+    public static final String MODIFICAR_CRUD = "El elemento se ha actualizado correctamente.";
     public static final String PATH_MANUAL = "src/Complementos/Proyecto2.pdf";
 }

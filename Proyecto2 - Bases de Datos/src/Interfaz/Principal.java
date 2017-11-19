@@ -19,7 +19,7 @@ public class Principal extends javax.swing.JFrame {
     
     private Diccionario diccionario;
     private AcercaDe acercaDe;
-    private CRUD crud;
+    private CRUDEquipo crudEquipo;
     private final ImageIcon iconoFlecha = new ImageIcon(getClass().getResource("/Complementos/flecha.png"));
     private final ImageIcon iconoMundial = new ImageIcon(getClass().getResource("/Complementos/icono_rusia.png"));
     
@@ -156,7 +156,7 @@ public class Principal extends javax.swing.JFrame {
         opciones_jMenu.setText("Opciones");
 
         crud_jMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Complementos/balon_futbol.png"))); // NOI18N
-        crud_jMenuItem.setText("CRUD");
+        crud_jMenuItem.setText("CRUD Equipos");
         crud_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 crud_jMenuItemActionPerformed(evt);
@@ -305,8 +305,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_salir_jMenuItemActionPerformed
 
     private void crud_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crud_jMenuItemActionPerformed
-        crud = new CRUD();
-        crud.setVisible(true);
+        crudEquipo = new CRUDEquipo();
+        crudEquipo.setVisible(true);
     }//GEN-LAST:event_crud_jMenuItemActionPerformed
     
     /**

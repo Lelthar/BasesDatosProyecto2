@@ -34,4 +34,25 @@ public class Mensaje {
     public static void entradaVacia() {
         JOptionPane.showMessageDialog(null, ClaseAux.Constantes.ENTRADA_VACÍA, "", JOptionPane.ERROR_MESSAGE);
     }
+    
+    /**
+     * Mensaje creacion correcta en CRUD.
+     */
+    public static void mensajeCrearCRUD() {
+        JOptionPane.showMessageDialog(null, ClaseAux.Constantes.CREAR_CRUD);
+    }
+    
+    /**
+     * Mensaje eliminacion correcta en CRUD.
+     */
+    public static void mensajeBorrarCRUD() {
+        JOptionPane.showMessageDialog(null, ClaseAux.Constantes.BORRAR_CRUD);
+    }
+    
+    /**
+     * Mensaje actualizacion correcta en CRUD.
+     */
+    public static void mensajeActualizarCRUD() {
+        JOptionPane.showMessageDialog(null, ClaseAux.Constantes.MODIFICAR_CRUD);
+    }
 }
