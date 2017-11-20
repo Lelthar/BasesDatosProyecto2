@@ -362,4 +362,17 @@ CREATE VIEW vista_crud_partido
 AS (SELECT * FROM partido);
 SELECT * FROM vista_crud_equipo;
 
+/*Este codigo sirve para borrar las tablas generadas por la consulta de tabla general de posiciones*/
+exec borrar('tablafinal');
+exec borrar('tablasemifinal');
+exec borrar('tablatemporal1');
+exec borrar('tablacuartosfinal');
+exec borrar('tablatemporal2');
+exec borrar('tablaoctavosfinal');
+exec borrar('tablatemporal3');
+exec borrar('tablafasegrupos');
+exec borrar('tabla_goles_equipos1');
+exec borrar('tabla_goles_equipos2');
+exec borrar('tabla_goles_equipos');
+exec borrar('tabla_goles_equipos_completo');
 
