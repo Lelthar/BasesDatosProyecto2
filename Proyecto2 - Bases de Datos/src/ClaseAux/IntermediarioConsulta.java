@@ -8,6 +8,7 @@ package ClaseAux;
 import ClaseAux.Mensaje;
 import Interfaz.Consulta;
 import Interfaz.InformacionEquipos;
+import Interfaz.InformacionGrupos;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
@@ -65,6 +66,28 @@ public class IntermediarioConsulta {
             } else {
                 //ClaseAux.Variables.setConsultaSQL("");
                 InformacionEquipos informacionEquipos = new InformacionEquipos(partido);
+                informacionEquipos.setVisible(true);
+            }
+        } else {
+            return;
+        }
+    }
+    
+    /**
+     * Para la consulta de estadísticas de un partido.
+     */
+    @SuppressWarnings("UnnecessaryReturnStatement")
+    public static void verEstadisticaGrupos() {
+        JTextField entradaPartido = new JTextField();
+        Object[] mensaje = { "Grupo(TODOS): ", entradaPartido };
+        int opcion = JOptionPane.showConfirmDialog(null, mensaje, "Llene la siguiente información: ", JOptionPane.OK_CANCEL_OPTION);
+        if (opcion == JOptionPane.OK_OPTION) {
+            String partido = entradaPartido.getText();
+            if (partido.equals("")) {
+                Mensaje.entradaVacia();
+            } else {
+                //ClaseAux.Variables.setConsultaSQL("");
+                InformacionGrupos informacionEquipos = new InformacionGrupos(partido);
                 informacionEquipos.setVisible(true);
             }
         } else {

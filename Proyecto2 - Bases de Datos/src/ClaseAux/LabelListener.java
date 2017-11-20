@@ -45,8 +45,7 @@ public class LabelListener {
                         IntermediarioConsulta.verEstadisticaPartidos();
                         break;
                     case 4:
-                        ClaseAux.Variables.setConsultaSQL("");
-                        IntermediarioConsulta.cargarConsulta();
+                        IntermediarioConsulta.verEstadisticaGrupos();
                         break;
                     case 5:
                         ClaseAux.Variables.setConsultaSQL("");
