@@ -163,8 +163,9 @@ public class CRUDPartido extends javax.swing.JFrame {
                                 .addComponent(leer_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(borrar_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(actualizar_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(plantillas_jButton)
-                            .addComponent(arbitros_jButton))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(arbitros_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(plantillas_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -345,10 +346,14 @@ public class CRUDPartido extends javax.swing.JFrame {
 
     private void plantillas_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plantillas_jButtonActionPerformed
         // TODO add your handling code here:
+        AuxPlantillas auxPlantillas = new AuxPlantillas();
+        auxPlantillas.setVisible(true);
     }//GEN-LAST:event_plantillas_jButtonActionPerformed
 
     private void arbitros_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arbitros_jButtonActionPerformed
         // TODO add your handling code here:
+        AuxArbitros auxArbitros = new AuxArbitros();
+        auxArbitros.setVisible(true);
     }//GEN-LAST:event_arbitros_jButtonActionPerformed
 
     /**
