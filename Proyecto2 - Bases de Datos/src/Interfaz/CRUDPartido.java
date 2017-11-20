@@ -67,6 +67,8 @@ public class CRUDPartido extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         resultado_consulta_jTable = new javax.swing.JTable();
         regresar_jButton = new javax.swing.JButton();
+        plantillas_jButton = new javax.swing.JButton();
+        arbitros_jButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -128,6 +130,20 @@ public class CRUDPartido extends javax.swing.JFrame {
             }
         });
 
+        plantillas_jButton.setText("Plantillas");
+        plantillas_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plantillas_jButtonActionPerformed(evt);
+            }
+        });
+
+        arbitros_jButton.setText("Árbitros");
+        arbitros_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arbitros_jButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,11 +157,14 @@ public class CRUDPartido extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(crear_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(leer_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(borrar_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(actualizar_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(crear_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(leer_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(borrar_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(actualizar_jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(plantillas_jButton)
+                            .addComponent(arbitros_jButton))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -169,6 +188,10 @@ public class CRUDPartido extends javax.swing.JFrame {
                         .addComponent(actualizar_jButton)
                         .addGap(18, 18, 18)
                         .addComponent(borrar_jButton)
+                        .addGap(30, 30, 30)
+                        .addComponent(plantillas_jButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(arbitros_jButton)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,7 +215,6 @@ public class CRUDPartido extends javax.swing.JFrame {
             JTextField entradaNombreSede = new JTextField();
             JTextField entradaNombreEstadio = new JTextField();
             JTextField entradaTiemposExtra = new JTextField();
-            
             
             Object[] mensaje = { "Código de partido: ", entradaNumPartido,
                 "Fase: ", entradaFase,
@@ -223,8 +245,8 @@ public class CRUDPartido extends javax.swing.JFrame {
                 } else {
                     Conexion.Conexion.realizarConsulta("" +
                         "INSERT INTO partido VALUES (" +
-                        "'" + numPartido +
-                        "','" + fase +
+                        "" + numPartido +
+                        ",'" + fase +
                         "','" + fecha +
                         "','" + hora + 
                         "','" + cantAficionados + 
@@ -287,7 +309,7 @@ public class CRUDPartido extends javax.swing.JFrame {
                     Mensaje.entradaVacia();
                 } else {
                     Conexion.Conexion.realizarConsulta("" +
-                        "UPDATE partido SET " + atributo + " = '" + strNuevoValor + "' WHERE numero_partido = '" + numPartido + "'");
+                        "UPDATE partido SET " + atributo + " = '" + strNuevoValor + "' WHERE numero_partido = " + numPartido);
                     ClaseAux.Mensaje.mensajeActualizarCRUD();
                 }
             }
@@ -307,7 +329,7 @@ public class CRUDPartido extends javax.swing.JFrame {
                     Mensaje.entradaVacia();
                 } else {
                     Conexion.Conexion.realizarConsulta("" +
-                        "DELETE FROM partido WHERE numero_partido = '" + numPartido.toUpperCase() + "'");
+                        "DELETE FROM partido WHERE numero_partido = " + numPartido);
                     ClaseAux.Mensaje.mensajeBorrarCRUD();
 
                 }
@@ -320,6 +342,14 @@ public class CRUDPartido extends javax.swing.JFrame {
     private void regresar_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresar_jButtonActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_regresar_jButtonActionPerformed
+
+    private void plantillas_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plantillas_jButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_plantillas_jButtonActionPerformed
+
+    private void arbitros_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arbitros_jButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_arbitros_jButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,12 +388,14 @@ public class CRUDPartido extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizar_jButton;
+    private javax.swing.JButton arbitros_jButton;
     private javax.swing.JButton borrar_jButton;
     private javax.swing.JButton crear_jButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton leer_jButton;
+    private javax.swing.JButton plantillas_jButton;
     private javax.swing.JButton regresar_jButton;
     private javax.swing.JTable resultado_consulta_jTable;
     // End of variables declaration//GEN-END:variables

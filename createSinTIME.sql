@@ -347,6 +347,12 @@ begin
             raise;
 end borrar;
 
+-- Obtiene el link de google maps de una sede --
+create procedure link_sede (input_nombre_sede VARCHAR) as
+begin
+    select link_estadio from sede where nombre_sede = input_nombre_sede;
+end;
+
 /* VISTAS DEL PROGRAMA (2) EN TOTAL */
 CREATE VIEW vista_crud_equipo
 AS (SELECT * FROM equipo);
