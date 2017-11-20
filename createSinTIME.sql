@@ -376,3 +376,19 @@ exec borrar('tabla_goles_equipos2');
 exec borrar('tabla_goles_equipos');
 exec borrar('tabla_goles_equipos_completo');
 
+/*Funciones que una sirve para ver el total de puntos de un equipo y el otro para ver la diferencia de goles*/
+CREATE FUNCTION puntos_equipo(partidos_ganados IN NUMBER,partidos_empatados IN NUMBER) 
+   RETURN NUMBER 
+   IS 
+   BEGIN  
+      RETURN (partidos_ganados*3+partidos_empatados); 
+    END;
+/
+
+CREATE FUNCTION diferencia_goles(goles_favor IN NUMBER,goles_contra IN NUMBER) 
+   RETURN NUMBER 
+   IS 
+   BEGIN  
+      RETURN(goles_favor - goles_contra); 
+    END;
+/
