@@ -86,7 +86,7 @@ public class AcercaDe extends javax.swing.JFrame {
 
         jLabel6.setText("Jean Carlo Hernández Arguedas");
 
-        jLabel7.setText("Marlon Reyes");
+        jLabel7.setText("Marlon Reyes Montero");
 
         jLabel8.setText("Gerald Morales Alvarado");
 
