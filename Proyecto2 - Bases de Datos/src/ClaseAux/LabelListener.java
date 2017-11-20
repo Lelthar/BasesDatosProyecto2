@@ -7,6 +7,7 @@ package ClaseAux;
 
 import Interfaz.EquiposConfederacion;
 import Interfaz.VentanaGoleadoresMundial;
+import Interfaz.VentanaTablaGeneralPosiciones;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -21,6 +22,7 @@ public class LabelListener {
     
     private static EquiposConfederacion equiposConfederacion;
     private static VentanaGoleadoresMundial goleadoresMundial;
+    private static VentanaTablaGeneralPosiciones tablageneral;
     
     public static void LabelListener(JLabel jLabel, int opcion) {
         JLabel jLabelListener = jLabel;
@@ -48,8 +50,8 @@ public class LabelListener {
                         IntermediarioConsulta.verEstadisticaGrupos();
                         break;
                     case 5:
-                        ClaseAux.Variables.setConsultaSQL("");
-                        IntermediarioConsulta.cargarConsulta();
+                        tablageneral = new VentanaTablaGeneralPosiciones();
+                        tablageneral.setVisible(true);
                         break;
                     case 6:
                        
