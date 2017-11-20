@@ -420,3 +420,36 @@ CREATE FUNCTION diferencia_goles(goles_favor IN NUMBER,goles_contra IN NUMBER)
       RETURN(goles_favor - goles_contra); 
     END;
 /
+
+
+/* Triggers con commit y rollback */
+CREATE OR REPLACE TRIGGER ELIMINAR_JUGADOR_CAMBIO_LOCAL_TRANSAC
+AFTER INSERT ON CAMBIOS_EQUIPO_LOCAL
+BEGIN
+    DELETE FROM pantilla_titular_equipo_local
+        WHERE numero_pasaporte_jugador=new.numero_pasaporte_jugador;
+
+    INSERT INTO pantilla_titular_equipo_local
+        values(new.numero_partido,new.numero_pasaporte_jugador_entra,new.codigo_equipo);
+    commit;
+exception
+	rollback;
+END;
+
+
+CREATE OR REPLACE TRIGGER ELIMINAR_JUGADOR_CAMBIO_VISITA_TRANSAC
+AFTER INSERT ON CAMBIOS_EQUIPO_VISITA
+BEGIN
+    DELETE FROM pantilla_titular_equipo_visita
+        WHERE numero_pasaporte_jugador=new.numero_pasaporte_jugador;
+
+    INSERT INTO pantilla_titular_equipo_visita
+        values(new.numero_partido,new.numero_pasaporte_jugador_entra,new.codigo_equipo);
+	commit;
+exception
+	rollback;
+END;
+
+
+
+
