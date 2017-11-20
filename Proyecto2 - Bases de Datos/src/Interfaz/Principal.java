@@ -20,6 +20,7 @@ public class Principal extends javax.swing.JFrame {
     private Diccionario diccionario;
     private AcercaDe acercaDe;
     private CRUDEquipo crudEquipo;
+    private CRUDPartido crudPartido;
     private final ImageIcon iconoFlecha = new ImageIcon(getClass().getResource("/Complementos/flecha.png"));
     private final ImageIcon iconoMundial = new ImageIcon(getClass().getResource("/Complementos/icono_rusia.png"));
     
@@ -90,6 +91,7 @@ public class Principal extends javax.swing.JFrame {
         principal_jMenuBar = new javax.swing.JMenuBar();
         opciones_jMenu = new javax.swing.JMenu();
         crud_jMenuItem = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         diccionario_jMenuItem = new javax.swing.JMenuItem();
         ayuda_jMenuItem = new javax.swing.JMenuItem();
         acerca_de_jMenuItem = new javax.swing.JMenuItem();
@@ -163,6 +165,15 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         opciones_jMenu.add(crud_jMenuItem);
+
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Complementos/balon_futbol.png"))); // NOI18N
+        jMenuItem1.setText("CRUD Partidos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        opciones_jMenu.add(jMenuItem1);
 
         diccionario_jMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Complementos/balon_futbol.png"))); // NOI18N
         diccionario_jMenuItem.setText("Diccionario");
@@ -308,6 +319,11 @@ public class Principal extends javax.swing.JFrame {
         crudEquipo = new CRUDEquipo();
         crudEquipo.setVisible(true);
     }//GEN-LAST:event_crud_jMenuItemActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        crudPartido = new CRUDPartido();
+        crudPartido.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -352,6 +368,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel menu_principal_jLabel;
     private javax.swing.JMenu opciones_jMenu;
     private javax.swing.JMenuBar principal_jMenuBar;
